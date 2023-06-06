@@ -87,23 +87,20 @@
       });
     }
     function save_order() {
-      let name = $("#name").val();
-      let address = $("#address").val();
-      let size = $("#size").val();
-      $.ajax({
-        type: "POST",
-        url: "/mars",
-        data: {
-          name_give: name,
-          address_give: address,
-          size_give: size,
-        },
+    let name = $('#name').val()
+    let address = $('#address').val()
+    let size = $('#size').val()
+
+    $.ajax({
+        type: 'POST',
+        url: '/mars',
+        data: { name_give:name, address_give:address, size_give:size },
         success: function (response) {
-          alert(response["msg"]);
-          window.location.reload();
-        },
-      });
-    }
+            alert(response['msg'])
+            window.location.reload()
+        }
+    });
+}
   </script>
 </head>
 
@@ -149,21 +146,6 @@
         </tr>
       </thead>
       <tbody id="order-box">
-        <tr>
-          <td>Jim</td>
-          <td>100 Downing St.</td>
-          <td>20 acres</td>
-        </tr>
-        <tr>
-          <td>Bob</td>
-          <td>856 Peterson Ave.</td>
-          <td>10 acres</td>
-        </tr>
-        <tr>
-          <td>Steve</td>
-          <td>212 Baker St.</td>
-          <td>30 acres</td>
-        </tr>
       </tbody>
     </table>
   </div>

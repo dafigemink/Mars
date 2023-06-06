@@ -8,11 +8,11 @@ from pymongo import MongoClient
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-MONGODB_URI = os.environ.get("MONGODB_URI")
-DB_NAME = os.environ.get("DB_NAME")
+MONGODB_URI = os.environ.get("mongodb+srv://alhaqdafi709:sparta@cluster0.tksdoiq.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("dbsparta")
 
-client = MongoClient("MONGODB_URI")
-db = client [DB_NAME]
+client = MongoClient("mongodb+srv://alhaqdafi709:sparta@cluster0.tksdoiq.mongodb.net/?retryWrites=true&w=majority")
+db = client.dbsparta
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ def home():
 
 
 @app.route("/mars", methods=["POST"])
-def web_mars_post():
+def mars_post():
     name_receive = request.form["name_give"]
     address_receive = request.form["address_give"]
     size_receive = request.form["size_give"]
